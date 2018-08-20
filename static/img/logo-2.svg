@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve">
+<style type="text/css">
+	.st0{stroke:#000000;stroke-width:8;stroke-miterlimit:10;}
+	.st1{fill:#FFFFFF;}
+	.st2{font-family:'Marion-Bold';}
+	.st3{font-size:30.7947px;}
+</style>
+<path d="M46.3,1.8c0,0-7.7,20.7-38.6,19.3V50c0,26.5,38.6,48.2,38.6,48.2S84.9,76.5,84.9,50V21C54,22.5,46.3,1.8,46.3,1.8z M75.2,50
+	c0,14-14,30.4-28.9,37.6C29.9,79.4,17.4,63.5,17.4,50V30.7c17.8-1.4,21.2-9.6,28.9-15.4C54,21,57.4,28.7,75.2,30.7V50z"/>
+<line class="st0" x1="4.5" y1="39.1" x2="88.2" y2="39.1"/>
+<line class="st0" x1="14.7" y1="72.1" x2="78" y2="72.1"/>
+<rect x="4.5" y="41.3" class="st1" width="86.5" height="29.4"/>
+<text transform="matrix(1 0 0 1 17.3681 66.7725)" class="st2 st3">TLS</text>
+</svg>

@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block page %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div>
+      <h1>Secure Socket API</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+
+<div class="row">
+  <div class="col-sm">
+
+  <p>The Secure Socket API uses the standard POSIX socket API to
+  create a vastly simplified TLS API. This has several advantages:</p>
+
+  <ul>
+
+    <li><span class="badge badge-dark">Easy development</span> of TLS to create secure clients and servers.
+    You can integrate TLS with your application with 5-15 lines of
+    code versus thousands when using OpenSSL directly. We have ported
+    the library so that in addition to C/C++ you can use the SSA with
+    Python, PHP, and Go.</li>
+
+    <li><span class="badge badge-dark">Centralized control</span> of all TLS configuration for system
+    administrators and OS vendors. Administrators can tailor TLS
+    configuration to their needs, for example by whitelisting only
+    secure cipher suites or requiring TLS 1.2 and above.</li>
+
+    <li><span class="badge badge-dark">Simple patching</span> of vulnerable applications. If an application
+    dynamically loads an SSL library, you can port the application to
+    the SSA, without modifying its code.</li>
+
+  </ul>
+
+  </div>
+</div>
+
+  <div class="alert alert-primary">USENIX Security Paper</div>
+  <div class="row">
+  <div class="col-sm-8">
+    <p>This paper explores using the POSIX socket API as a vehicle for
+  a simplified TLS API, while also giving system administrators the
+  ability to control applications and tailor TLS configuration to
+  their needs.  We first assess OpenSSL and its uses in open source
+  software, recommending how this functionality should be accommodated
+  within the POSIX API.  We then propose the Secure Socket API (SSA),
+  a minimalist TLS API built using existing network functions and find
+  that it can be employed by existing network applications by
+  modifications requiring as little as one line of code.  We next
+  describe a prototype SSA implementation that leverages network
+  system calls to provide privilege separation and support for other
+  programming languages.  We end with a discussion of the benefits and
+  limitations of the SSA and our accompanying implementation, noting
+  avenues for future work.</p>
+
+  <p>Mark O'Neill, Scott Heidbrink, Jordan Whitehead, Tanner Perdue, Luke
+    Dickinson, Torstein Collett, Nick Bonner, Kent Seamons, and Daniel
+    Zappala, <a
+    href="https://www.usenix.org/conference/usenixsecurity18/presentation/oneill">The
+    Secure Socket API: TLS as an Operating System Service</a>, USENIX
+  Security, August 2018</p>
+
+  </div>
+  <div class="col-sm-4">
+    <p><img class="img-fluid img-frame" src="/static/img/ssa-paper.png"/></p>
+  </div>
+  </div>
+
+<div class="alert alert-primary">OpenSSL Analysis</div>
+
+<div class="row">
+<div class="col-sm-8">
+
+  <p>This paper provides an analysis of contemporary usage of OpenSSL
+across 410 Linux applications. The results of this study informed our
+design of the Secure Socket API.  </p>
+  
+  <p>Heidbrink, Scott Jared, <a href="https://scholarsarchive.byu.edu/etd/6716/">A Large-Scale Analysis of How OpenSSL Is
+  Used in Open-Source Software</a>, Master's Thesis, Brigham Young
+  University, 2018.</p>
+  
+  </div>
+   
+  <div class="col-sm-4">
+    <p><img class="img-fluid img-frame" src="/static/img/openssl-paper.png"/></p>
+  </div>
+  </div>
+
+    <div class="alert alert-primary">Code</div>
+
+    <div class="row">
+    <div class="col-sm">
+  <p><span class="badge badge-dark">SSA</span> <a
+  href="https://github.com/markoneill/ssa">https://github.com/markoneill/ssa</a></p>
+
+    <p><span class="badge badge-dark">SSA Daemon</span> <a
+  href="https://github.com/markoneill/ssa-daemon">https://github.com/markoneill/ssa-daemon</a></p>
+
+  </div>
+  </div>
+  </div>
+
+{% endblock %}

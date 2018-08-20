@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block page %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>TrustBase</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm">
+
+  <p>TrustBase provides certificate-based authentication as an
+  operating system service. TrustBase allows you to:</p>
+
+  <ul>
+    
+    <li>Transparently <b>enforce</b> best practices for certificate
+    validation on all applications.</li>
+
+    <li><b>Configure</b> a variety of authentication services to strengthen the
+    CA system.</li>
+
+    <li>Set <b>policy</b> for how certificate validation should be handled on
+    your machine.</li>
+
+  </ul>
+
+  <p>TrustBase currently provides the following plugins:</p>
+
+  <ul>
+
+    <li><span class="badge badge-dark">CA Validation</span> Enforces
+    standard certificate validation using openssl functions and
+    standard practices for validating hostnames, Basic Constraints,
+    dates, etc.</li>
+
+    <li><span class="badge badge-dark">Whitelist</span> Stores a set of
+    certificates that are always considered valid for their respective
+    hosts, such as self-signed certificates.</li>
+
+    <li><span class="badge badge-dark">Certificate Pinning</span> Uses
+    Trust On First Use to pin certificates for any host; expired
+    certificates are replaced by the next certificate received by a
+    connection to that domain.</li>
+    
+    <li><span class="badge badge-dark">Certificate
+    Revocation</li>Checks OCSP to determine whether the certificate
+    has been revoked.</li>
+    
+    <li><span class="badge badge-dark">CRLSet Blocking</span> Checks
+    Google’s CRLSet to determine whether the certificate has been
+    blocked, extending Chrome’s protection to all apps.</li>
+    
+    <li><span class="badge badge-dark">DANE</li> Uses the DNS system
+    to distribute public keys in a TLSA record.</li>
+    
+    <li><span class="badge badge-dark">Notary</span> Based on ideas
+    presented by Perspectives and Convergence, it connects
+    securely to one or more notary servers to validate the certificate
+    received by the client is the same one that is seen by the
+    notaries.</li>
+    
+    <li><span class="badge badge-dark">Cipher Suite Auditor</span>
+    Uses Client Hello and Server Hello information, along with a
+    configuration with secure defaults, to disallow weak cipher
+    suites. It can also require that certain TLS extensions be
+    employed (e.g., TACK).</li>
+
+  </ul>
+
+  </div>
+  </div>
+
+  <div class="alert alert-primary">USENIX Security Paper</div>
+
+  <div class="row">
+  <div class="col-sm-8">
+  <p>The current state of certificate-based authentication is messy,
+  with broken authentication in applications and proxies, along with
+  serious flaws in the CA system. To solve these problems, we design
+  TrustBase, an architecture that provides certificate-based
+  authentication as an operating system service, with system
+  administrator control over authentication policy. TrustBase
+  transparently enforces best practices for certificate validation on
+  all applications, while also providing a variety of authentication
+  services to strengthen the CA system. We describe a research
+  prototype of TrustBase for Linux, which uses a loadable kernel
+  module to intercept traffic in the socket layer, then consults a
+  userspace policy engine to evaluate certificate validity using a
+  variety of plugins. We evaluate the security of TrustBase, including
+  a threat analysis, application coverage, and hardening of the Linux
+  prototype. We also describe prototypes of TrustBase for Android and
+  Windows, illustrating the generality of our approach. We show that
+  TrustBase has negligible overhead and universal compatibility with
+  applications. We demonstrate its utility by describing eight
+  authentication services that extend CA hardening to all
+  applications.</p>
+
+    <p>Mark O'Neill, Scott Heidbrink, Scott Ruoti, Jordan Whitehead, Dan
+  Bunker, Luke Dickinson, Travis Hendershot, Joshua Reynolds, Kent
+  Seamons, and Daniel Zappala, <a href="https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/oneill">TrustBase: An Architecture to Repair
+  and Strengthen Certificate-based Authentication</a>, USENIX Security,
+  August 2017.</p>
+
+  </div>
+
+   <div class="col-sm-4">
+     <p><img class="img-fluid img-frame" src="/static/img/trustbase-paper.png"/></p>
+  </div>
+  </div>
+
+  <div class="alert alert-primary">Code</div>
+
+  <div class="row">
+    <div class="col-sm">
+
+  <p><span class="badge badge-dark">TrustBase Linux</span> <a
+  href="https://github.com/markoneill/trustbase-linux">https://github.com/markoneill/trustbase-linux</a></p>
+
+    <p><span class="badge badge-dark">TrustBase Windows</span> <a
+  href="https://github.com/markoneill/trustbase-windows">https://github.com/markoneill/trustbase-windows</a></p>
+
+      <p><span class="badge badge-dark">TrustBase Android</span> <a
+  href="https://github.com/markoneill/trustbase-android">https://github.com/markoneill/trustbase-android</a></p>
+
+  </div>
+  </div>
+
+  
+</div>
+
+{% endblock %}
